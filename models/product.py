@@ -3,12 +3,8 @@ from odoo import models, fields, api, _
 import odoo.addons.decimal_precision as dp
 from odoo.exceptions import   UserError, RedirectWarning
 
-
-
-
 class ProductProductCost(models.Model):
     _inherit = 'product.product'
-
 
     @api.multi
     def cost_compute(self, price_type, uom=False, currency=False, company=False):

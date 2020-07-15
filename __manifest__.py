@@ -16,8 +16,8 @@
    
     'data': [
         'security/ir.model.access.csv',
-        'views/stock_warehouse',
-        'views/pricelist_cost_view.xml',
+        'views/stock_warehouse.xml',
+       
         'views/product_cost_view.xml',
     ],
    "active": False,

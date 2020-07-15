@@ -5,10 +5,10 @@
 			<field name="model">stock.warehouse.orderpoint</field>
             <field name="inherit_id" ref="stock.view_warehouse_orderpoint_tree"/>
 			<field name="arch" type="xml">
-			<xpath expr="/tree" position='inside'>
+			<xpath expr="/tree/field[@name='product_id']" position='after'>
                 
                     <field name="product_cost"/>
-                    <field name="qty_available"/>
+                    <field name="qty_available" string="Cantidad a mano" />
                  
 
                 </xpath>

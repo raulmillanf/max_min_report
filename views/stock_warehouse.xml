@@ -1,5 +1,5 @@
 <odoo>
-    <data>
+   
        <record model="ir.ui.view" id="stock_max_min_rules">
 			<field name="name">stock.warehouse.orderpoint</field>
 			<field name="model">stock.warehouse.orderpoint</field>
@@ -8,11 +8,9 @@
 			<xpath expr="/tree/field[@name='product_id']" position='after'>
                 
                     <field name="product_cost"/>
-                    <field name="qty_available" string="Cantidad a mano" />
-                 
-
+                    <field name="qty_available" string="Cantidad a mano"/>
                 </xpath>
 			</field>
 		</record>
-    </data>
+
 </odoo>

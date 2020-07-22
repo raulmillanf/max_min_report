@@ -11,7 +11,7 @@
     'version': '11.0.1',
 
   
-    'depends': ['base','product','stock'],
+    'depends': ['base','product','stock','product_brand'],
 
    
     'data': [

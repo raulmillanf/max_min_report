@@ -6,38 +6,45 @@
     report_type="qweb-pdf"
     name="max_min_report.custom_max_min_report"/>
 
+  
     <template id="custom_max_min_report">
-       
-        <t t-foreach="docs" t-as="o">
-         <t t-if="o and 'company_id' in o">
+
+      
+            <t t-if="o and 'company_id' in o">
                 <t t-set="company" t-value="o.company_id"></t>
             </t>
             <t t-if="not o or not 'company_id' in o">
                 <t t-set="company" t-value="res_company"></t>
-            </t>
-                <div class="header">
+            </t> 
+            <div class="header" style="border-bottom: 1px solid black;">
                      <div class="row">
                         <div class="col-xs-12">
                             <div class="text-center">
-                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="height: 140px; width: 285px;margin-left:85px;padding-bottom:20px;"/>
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % to_text(company.logo)" style="height: 170px; width: 330px;padding-bottom:20px;"/>
+                            <br/>
                             </div>
                         </div>
                     </div>
+                   
                 </div>
-        <t t-call="web.external_layout">
-                <div class="page"/>
+          
+    
+        <t t-call="web.external_layout"> 
+             <div class="page">
                 <div class="oe_structure"/>
-                <strong><p>Fecha: </p><span style="text-align:left; font-size:13px;margin-top:0,5px" t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></strong><br/>
                 <br/>
+                    <strong>Fecha: <span style="text-align:left; font-size:14px;margin-top:15px" t-esc="context_timestamp(datetime.datetime.now()).strftime('%d-%m-%Y')"/></strong><br/>
+                    <br/>
 
-            <table class="table table-condensed table table-striped" style=" table-layout:fixed;">
-               <thead style=" background-color: #043c6d;">
-                   <tr> 
-                    <th colspan="5" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">MÁXIMOS Y MÍNIMOS</th>
-                   </tr>
+                <table class="table table-condensed table table-striped" style=" table-layout:fixed;">
+                    <thead style=" background-color: #043c6d;">
+                    <tr> 
+                     <th colspan="6" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">MÁXIMOS Y MÍNIMOS</th>
+                    </tr>
                    <tr>
                         <th width="30px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Producto</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Costo</th>
+                        <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Marca</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Mínimo</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Cantidad</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Máximo</th>
@@ -51,7 +58,10 @@
                         </td>
 
                         <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
-                            <div t-field="doc.product_cost"/>
+                            $<span t-field="doc.product_cost"/>
+                        </td>
+                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                           <span t-field="doc.product_brand_id"/>
                         </td>
 
                         <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
@@ -63,16 +73,18 @@
                         </td>
 
                         <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
-                            <strong><span t-field="doc.product_max_qty"/></strong>
+                            <span t-field="doc.product_max_qty"/>
                         </td>
-                        
                         
                     </tr>
                 </t>
                 </tbody>
             </table>
+            </div>
+            
+        
         </t>
-    </t>
+
     </template>
     
 </odoo>

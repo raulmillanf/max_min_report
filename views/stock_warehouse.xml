@@ -9,7 +9,7 @@
 	 			
 					<field name="product_brand_id"/>
 				
-                    <field name="product_cost"/>
+                    <field name="product_cost" widget='monetary'/>
                     <field name="qty_available" string="Cantidad a mano"/>
 					
                 </xpath>

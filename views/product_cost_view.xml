@@ -8,8 +8,8 @@
             <field name="inherit_id" ref="product.product_template_form_view"/>
             <field name="arch" type="xml">
                  <xpath expr="//field[@name='company_id']" position="before">
-                    <field name="product_cost" string="Costo" widget='monetary' options="{'currency_field': 'cost_currency_id'}"/>
-                    <field class='oe_edit_only' name="cost_currency_id" string="Moneda para costos" readonly='0'/>
+                    <field name="product_cost" string="Costo" widget='monetary' options="{'currency_field': 'cost_currency'}"/>
+                    <field class='oe_edit_only' name="cost_currency" string="Moneda para costos" readonly='0'/>
                 </xpath>
                 <div name="standard_price_uom" position="replace">
                      <div name="standard_price_uom" invisible="1" groups="purchase.group_purchase_manager" attrs="{'invisible': [('product_variant_count', '&gt;', 1), ('is_product_variant', '=', False)]}">

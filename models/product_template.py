@@ -13,7 +13,7 @@ class ProductTemplateCost(models.Model):
         return self.env.user.company_id.currency_id
 
 
-    cost_currency_id = fields.Many2one('res.currency', string="Moneda para costo", groups="purchase.group_purchase_manager", default=_default_Ccurrency)
+    cost_currency = fields.Many2one('res.currency', string="Moneda para costo", groups="purchase.group_purchase_manager", default=_default_Ccurrency)
 
     @api.multi
     def cost_compute(self, price_type, uom=False, currency=False, company=False):
@@ -26,7 +26,7 @@ class ProductTemplateCost(models.Model):
         if price_type in ['product_cost', 'product_cost']:  
             for template in self:
 
-                cost[template.id] = template.cost_currency_id.compute(cost[template.id],
+                cost[template.id] = template.cost_currency.compute(cost[template.id],
                                                                          currency or template.currency_id, round=False)
         return cost
 
@@ -47,7 +47,7 @@ class ProductProductcost(models.Model):
         if price_type in ['product_cost', 'product_cost']:  
             for template in self:
 
-                cost[template.id] = template.cost_currency_id.compute(cost[template.id],
+                cost[template.id] = template.cost_currency.compute(cost[template.id],
                                                                          currency or template.currency_id, round=False)
         return cost
 

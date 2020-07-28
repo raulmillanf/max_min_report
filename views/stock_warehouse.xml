@@ -8,24 +8,13 @@
 			<xpath expr="/tree/field[@name='product_id']" position='after'>
 	 			
 					<field name="product_brand_id"/>
-				
-                    <field name="product_cost" widget='monetary'/>
+                   
+   					<field name="product_cost" />
+					<field name="cost_currency"	/>
                     <field name="qty_available" string="Cantidad a mano"/>
 					
                 </xpath>
 			</field>
 		</record>
-
-	<!--	<record id="view_stock_warehouse_search_brand" model="ir.ui.view">
-        	<field name="name">stock.warehouse.search.brand</field>
-       	 	<field name="model">stock.warehouse.orderpoint</field>
-        	<field name="inherit_id" ref="stock.warehouse_orderpoint_search"/>
-       		 <field name="arch" type="xml">
-            	<field name="product_id" position="after">
-                	<field name="product_id" string="Marca"/>
-                	<filter string="Marca" name="product_brand_id" context="{'group_by' : 'product_brand_id'}"/>
-            </field>
-        </field>
-    </record>-->
-
+	
 </odoo>

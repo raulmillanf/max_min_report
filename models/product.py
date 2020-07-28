@@ -17,5 +17,5 @@ class ProductProductCost(models.Model):
         if price_type in ['product_cost', 'product_cost']:  
             for template in self:
 
-                cost[template.id] = template.cost_currency_id.compute(cost[template.id], currency or template.currency_id, round=False)
+                cost[template.id] = template.cost_currency.compute(cost[template.id], currency or template.currency_id, round=False)
         return cost

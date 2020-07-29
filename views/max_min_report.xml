@@ -39,40 +39,44 @@
                 <table class="table table-condensed table table-striped" style=" table-layout:fixed;">
                     <thead style=" background-color: #043c6d;">
                     <tr> 
-                     <th colspan="6" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">MÁXIMOS Y MÍNIMOS</th>
+                     <th colspan="7" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">MÁXIMOS Y MÍNIMOS</th>
                     </tr>
                    <tr>
-                        <th width="30px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Producto</th>
-                        <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Costo</th>
+                        <th width="35px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Producto</th>
+                        <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Línea Comercial</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Marca</th>
+                        <th width="10px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Costo</th>   
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Mínimo</th>
-                        <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Cantidad</th>
+                        <th width="10px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Cant.</th>
                         <th width="15px" style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff; color:#fff !important; ">Máximo</th>
                     </tr>
                </thead>
                <tbody >
                  <t t-foreach="docs" t-as="doc">
                     <tr>
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
                           <div t-field="doc.product_id"/>
                         </td>
-
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
-                            $<span t-field="doc.product_cost"/>
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
+                           <span t-field="doc.product_commer_id"/>
                         </td>
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
                            <span t-field="doc.product_brand_id"/>
                         </td>
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
+                            $<span t-field="doc.product_cost"/>
+                        </td>
+                        
 
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
                             <span t-field="doc.product_min_qty"/>
                         </td>
 
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
                             <strong><span t-field="doc.qty_available"/></strong>
                         </td>
 
-                        <td style="border: 1px !important; text-align:center; border-style: solid !important; border-color: #fff !important;">
+                        <td style="border: 1px !important; text-align:center;vertical-align:middle; border-style: solid !important; border-color: #fff !important;">
                             <span t-field="doc.product_max_qty"/>
                         </td>
                         
